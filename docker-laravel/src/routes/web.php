@@ -24,10 +24,13 @@ Route::middleware('auth')->group(function () {
 
 Route::put('/supports/{id}', [SupportController::class,'update'])->name('supports.update');
 Route::put('/supports/{id}', [SupportController::class,'updatelocalizacao'])->name('supports.updatelocal');
+Route::put('/supports/{id}', [SupportController::class,'updateitens'])->name('supports.additem');
 
 
 Route::get('/supports/{id}/edit', [SupportController::class,'edit'])->name('supports.edit');
+
 Route::get('/supports/{id}/editlocal', [SupportController::class,'editlocal'])->name('supports.editlocal');
+
 Route::get('/supports/{id}/additem', [SupportController::class,'additem'])->name('supports.additem');
 
 Route::post('/supports', [SupportController::class, 'store'])->name('supports.store');

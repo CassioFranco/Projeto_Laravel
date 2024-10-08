@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\DTO\Supports\CreateSupportDTO;
+use App\DTO\Supports\UpdateItensDTO;
 use App\DTO\Supports\UpdateLocalizacaoDTO;
 use App\DTO\Supports\UpdateSupportDTO;
 use App\Models\Support;
@@ -92,5 +93,16 @@ class SupportEloquentORM implements SupportRepositoryinterface {
         return(object) $support->toArray();
     }
 
+    public function updateitens(UpdateItensDTO $dto): stdClass|null{
+
+        if (!$support= $this->model->find($dto->id)){
+            return null;
+        }
+
+        $support -> update(
+            (array) $dto
+        );
+        return(object) $support->toArray();
+    }
 
 }

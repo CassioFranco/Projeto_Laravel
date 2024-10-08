@@ -8,7 +8,7 @@
     <p>Localização</p>
     <li>latitude: {{$support->latitude}}</li>
     <li>longitude: {{$support->longitude}}</li>
-    <p>Inventário</p>
+    <p>Mochila</p>
     <li>Itens: {{$support->inventario}}</li>
 </ul>
 
@@ -20,6 +20,9 @@
 
 <a href="{{route('supports.editlocal',$support->id)}}">Atualizar Localização</a>
 <p></p>
-<a href="{{route('supports.additem',$support->id)}}">Adicionar Item</a>
+<a href="{{route('supports.additem',$support->id)}}">Adicionar Itens na Mochila</a>
+
+
+
 
 
