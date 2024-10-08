@@ -15,9 +15,9 @@
     <thead>
         <th>Nome</th>
         <th>Idade</th>
-        <th>Latitude</th>
-        <th>longitude</th>
-        <th>Inventário</th>
+        {{-- <th>Latitude</th>
+        <th>longitude</th> --}}
+        {{-- <th>Inventário</th> --}}
         <th></th>
     </thead>
     <tbody>
@@ -26,9 +26,9 @@
                 <td>{{ $support->nome }}</td>
                 {{-- <td>{{ getStatusSupport ($support->status) }}</td> --}}
                 <td>{{ $support->idade }}</td>
-                <td>{{ $support->latitude }}</td>
-                <td>{{ $support->longitude }}</td>
-                <td>{{ $support->inventario }}</td>
+                {{-- <td>{{ $support->latitude }}</td>
+                <td>{{ $support->longitude }}</td> --}}
+                {{-- <td>{{ $support->inventario }}</td> --}}
                 <td>
                     <a href="{{route('supports.show',$support->id)}}">ir</a>
                     <a href="{{route('supports.edit',$support->id)}}">Editar</a>

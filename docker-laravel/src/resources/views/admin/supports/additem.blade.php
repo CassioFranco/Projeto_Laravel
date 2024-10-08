@@ -1,4 +1,4 @@
-<h1>Editar explorador:  {{$support->nome}}</h1>
+<h1>Itens de  {{$support->nome}}</h1>
 
 <x-alert/>
 
@@ -6,7 +6,7 @@
     {{-- <input type="hidden" value="{{csrf_token() }}" name="_token"> --}}
     @csrf()
     @method('PUT')
-    @include('admin.supports.partials.form',[
+    @include('admin.supports.partials.addinventario',[
         'support' => $support
     ])
 </form>

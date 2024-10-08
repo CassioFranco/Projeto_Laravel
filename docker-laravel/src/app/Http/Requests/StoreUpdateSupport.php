@@ -23,12 +23,11 @@ class StoreUpdateSupport extends FormRequest
     public function rules(): array
     {
         $rules=[
-                'nome'=> 'required|max:255|unique:supports',
-                'idade'=> 'required|max:3',
-                'latitude'=> 'required|max:255',
-                'longitude'=> 'required|max:255',
+                'nome'=> 'max:255|unique:supports',
+                'idade'=> 'max:3',
+                // 'latitude'=> 'max:255',
+                // 'longitude'=> 'max:255',
                 'inventario' => [
-                    'required',
                     'min:3',
                     'max:100000'
 
@@ -38,7 +37,6 @@ class StoreUpdateSupport extends FormRequest
             if ($this->method() === 'PUT' || $this->method() === 'PATCH'){
 
                 $rules ['inventario'] = [
-                    'required',
                     'min:3',
                     'max:255',
                     //"unique:supports,subject,{$this->id},id"

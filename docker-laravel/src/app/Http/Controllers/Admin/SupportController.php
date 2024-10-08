@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\DTO\Supports\CreateSupportDTO;
 use App\DTO\Supports\UpdateSupportDTO;
+use App\DTO\Supports\UpdateLocalizacaoDTO;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreLocalizacao;
 use App\Http\Requests\StoreUpdateSupport;
 use App\Models\Support;
 use App\Services\SupportService;
@@ -62,6 +64,43 @@ class SupportController extends Controller{
         }
 
         return view('admin/supports.edit',compact('support'));
+
+    }
+
+    public function editlocal(string|int $id){
+        if(!$support = $this->service->findOne($id)){
+            return back();
+        }
+
+        return view('admin/supports.editlocal',compact('support'));
+
+    }
+
+    public function additem(string|int $id){
+        if(!$support = $this->service->findOne($id)){
+            return back();
+        }
+
+        return view('admin/supports.additem',compact('support'));
+
+    }
+
+
+    public function updatelocalizacao(StoreLocalizacao $request,Support $support, string $id){
+
+        $support = $this->service->updatelocalizacao(UpdateLocalizacaoDTO::MakeFromRequest($request));
+
+        if(!$support){
+            return back();
+        }
+
+        // $support->subject = $request->subject;
+        // $support->body = $request->body;
+        // $support->save();
+
+
+
+        return redirect()->route('supports.show', $id);
 
     }
 

@@ -5,6 +5,7 @@ namespace App\Services;
 
 use App\DTO\Supports\CreateSupportDTO;
 use App\DTO\Supports\UpdateSupportDTO;
+use App\DTO\Supports\UpdateLocalizacaoDTO;
 use App\Repositories\PaginationInterface;
 use App\Repositories\SupportRepositoryinterface;
 use stdClass;
@@ -48,6 +49,10 @@ class SupportService{
         return $this->repository->update($dto);
     }
 
+    public function updatelocalizacao(UpdateLocalizacaoDTO $dto): stdClass|null {
+
+        return $this->repository->updatelocalizacao($dto);
+    }
     public function delete(string $id): void {
         $this->repository->delete($id);
     }

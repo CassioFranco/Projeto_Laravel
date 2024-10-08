@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Api;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use PharIo\Manifest\Email;
 
-class AuthRequest extends FormRequest
+class StoreLocalizacao extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,20 +21,12 @@ class AuthRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            'email' =>[
-                '',
-                'email',
-                'max:255',
-            ],
-            'password' =>[
-                'required',
-                'max:255',
-            ],
-            'device_name' =>[
-                'required',
-                'max:255',
-            ],
-        ];
+        $rules=[
+                'latitude'=> 'max:255',
+                'longitude'=> 'max:255'
+            ];
+
+
+        return $rules;
     }
 }

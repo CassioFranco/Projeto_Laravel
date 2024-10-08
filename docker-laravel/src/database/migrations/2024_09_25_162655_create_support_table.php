@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('nome');
             $table->string('idade');
             $table->enum('status', array_column(SupportStatus::cases(), 'name'));
-            $table->string('latitude');
-            $table->string('longitude');
+            $table->string('latitude')->nullable();
+            $table->string('longitude')->nullable();
             $table->text('inventario');
             $table->timestamps();
         });

@@ -19,5 +19,7 @@
 </form>
 
 <a href="{{route('supports.editlocal',$support->id)}}">Atualizar Localização</a>
+<p></p>
+<a href="{{route('supports.additem',$support->id)}}">Adicionar Item</a>
 
 

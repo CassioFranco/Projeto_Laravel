@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\DTO\Supports\CreateSupportDTO;
+use App\DTO\Supports\UpdateLocalizacaoDTO;
 use App\DTO\Supports\UpdateSupportDTO;
 use stdClass;
 
@@ -14,5 +15,6 @@ interface SupportRepositoryinterface{
     public function delete(string $id): void;
     public function new(CreateSupportDTO $dto): stdClass;
     public function update(UpdateSupportDTO $dto): stdClass|null;
+    public function updatelocalizacao(UpdateLocalizacaoDTO $dto): stdClass|null;
 
 }

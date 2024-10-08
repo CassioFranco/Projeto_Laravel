@@ -11,8 +11,8 @@ class CreateSupportDTO{
         public string $nome,
         public SupportStatus $status,
         public string $idade,
-        public string $latitude,
-        public string $longitude,
+
+
         public string $inventario
         ){
 
@@ -25,8 +25,7 @@ class CreateSupportDTO{
             $request->nome,
             SupportStatus::A,
             $request->idade,
-            $request->latitude,
-            $request->longitude,
+
             $request->inventario,
         );
     }

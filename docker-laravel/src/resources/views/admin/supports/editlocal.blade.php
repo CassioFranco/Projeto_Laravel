@@ -1,8 +1,8 @@
-<h1>Explorador  {{$support->id}}</h1>
+<h1>Localização do explorador:  {{$support->nome}}</h1>
 
 <x-alert/>
 
-<form action="{{ route('supports.update',$support->id)}}" method="POST">
+<form action="{{ route('supports.updatelocal',$support->id)}}" method="POST">
     {{-- <input type="hidden" value="{{csrf_token() }}" name="_token"> --}}
     @csrf()
     @method('PUT')
