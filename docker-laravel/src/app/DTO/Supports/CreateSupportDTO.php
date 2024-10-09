@@ -13,7 +13,7 @@ class CreateSupportDTO{
         public string $idade,
 
 
-        public string $inventario
+
         ){
 
 
@@ -26,7 +26,7 @@ class CreateSupportDTO{
             SupportStatus::A,
             $request->idade,
 
-            $request->inventario,
+
         );
     }
 }

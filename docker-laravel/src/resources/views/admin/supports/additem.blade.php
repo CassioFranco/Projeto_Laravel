@@ -2,7 +2,7 @@
 
 <x-alert/>
 
-<form action="{{ route('supports.additem',$support->id)}}" method="POST">
+<form action="{{ route('supports.updateitens',$support->id)}}" method="POST">
     {{-- <input type="hidden" value="{{csrf_token() }}" name="_token"> --}}
     @csrf()
     @method('PUT')

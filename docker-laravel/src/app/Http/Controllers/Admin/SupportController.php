@@ -146,13 +146,15 @@ class SupportController extends Controller{
         return redirect()->route('supports.index');
     }
 
-    public function trocarItems(Request $request)
+
+    public function trocarItems(Request $request): JsonResponse
+
     {
-        $support = $request->validate([
-            'explorador1_id' => ['required', 'exists:exploradors,id'],
-            'explorador2_id' => ['required', 'exists:exploradors,id'],
-            'item_explorador1' => ['required', 'exists:items,id'],
-            'item_explorador2' => ['required', 'exists:items,id'],
+        $troca = $request->validate([
+            'explorador1_id' => ['required', 'exists:supports,id'],
+            'explorador2_id' => ['required', 'exists:supports,id'],
+            'item_explorador1' => ['required', 'exists:supports,id'],
+            'item_explorador2' => ['required', 'exists:supports,id'],
         ]);
 
         $explorador1_id = StoreUpdateSupport::find($request->explorador1_id);

@@ -13,7 +13,7 @@
 </ul>
 
 <form action="{{route('supports.destroy', $support->id) }}" method="post">
-    @csrf
+    @csrf()
     @method('DELETE')
     <button type="submit">Deletar</button>
 </form>
@@ -21,6 +21,7 @@
 <a href="{{route('supports.editlocal',$support->id)}}">Atualizar Localização</a>
 <p></p>
 <a href="{{route('supports.additem',$support->id)}}">Adicionar Itens na Mochila</a>
+<p></p>
 
 
 

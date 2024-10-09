@@ -19,7 +19,7 @@ return new class extends Migration
             $table->enum('status', array_column(SupportStatus::cases(), 'name'));
             $table->string('latitude')->nullable();
             $table->string('longitude')->nullable();
-            $table->text('inventario');
+            $table->text('inventario')->nullable();
             $table->timestamps();
         });
     }

@@ -1,3 +1,5 @@
+@csrf()
+
 @extends('admin.supports.layouts.app')
 
 @section('tittle', 'Fórum')
@@ -43,3 +45,4 @@
     :appends="$filters"/>
 
 @endsection
+
